@@ -1,54 +1,34 @@
-# keyinput-delayer.vim
+# keyinput-delayer.nvim
 
-キーインプットを遅延させるプラグインです。
+## Features
 
-帯域の細い環境で SSH をするような使い心地を提供します。
+Delays key input.
 
-そのような環境では、「より少ないキータイプで編集を済ませる」という意識が高くなるため、
-Vim の編集力を高めるためにも利用できます。
+Provides a `f**king s**t` experience.
+e.g. low bandwidth, using HDD, and RAM 1GB.
 
+Once you get used to this plugin, you can to edit text with fewer actions (obviously).
 
-# 使い方
-
-`keyinput_delayer#ToggleKeyInputDelay()` を、お好みのコマンド、またはキーマッピングに指定してください。
-
-設定例:
+## Usage
 
 ```vim
-command! ToggleGolfTraining call keyinput_delayer#ToggleKeyInputDelay()
+:Rocks install keyinput-delayer.nvim
 ```
 
-# コンフィギュレーション
-
-## `g:keyinput_delayer_delay_time`
-
-ディレイする時間を設定します。有効な値は `:h sleep` でご確認ください。
-
-設定例:
+### Command
 
 ```vim
-let g:keyinput_delayer_delay_time = "500m"
+:ToggleKeyInputDelay
+:EnableKeyInputDelay
+:DisableKeyInputDelay
 ```
 
+## Configuration
 
-# 類似プラグイン
+if you LOVE configuring:
 
-もっとストイックに鍛えたい場合は、以下のプラグインをお試しください。
-
-- [takac/vim-hardtime: Plugin to help you stop repeating the basic movement keys](https://github.com/takac/vim-hardtime)
-- [m4xshen/hardtime.nvim: Establish good command workflow and quit bad habit](https://github.com/m4xshen/hardtime.nvim)
-
-
-# License:
-
-Copyright (C) 2024 mikoto2000
-
-This software is released under the MIT License, see LICENSE
-
-このソフトウェアは MIT ライセンスの下で公開されています。 LICENSE を参照してください。
-
-
-# Author:
-
-mikoto2000 <mikoto2000@gmail.com>
-
+```lua
+require("keyinput-delayer").setup({
+    use_default_config = false,
+})
+```
